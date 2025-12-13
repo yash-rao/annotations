@@ -2,6 +2,7 @@ package com.AnnotationSpringBoot.annotation.spring.boot;
 
 import com.AnnotationSpringBoot.annotation.spring.boot.Controller.MyController;
 import com.AnnotationSpringBoot.annotation.spring.boot.Controller.PizzaController;
+import com.AnnotationSpringBoot.annotation.spring.boot.Lazy.LazyLoader;
 import com.AnnotationSpringBoot.annotation.spring.boot.Repository.MyRepository;
 import com.AnnotationSpringBoot.annotation.spring.boot.Service.MyService;
 import com.AnnotationSpringBoot.annotation.spring.boot.Service.Pizza;
@@ -26,6 +27,8 @@ public class AnnotationSpringBootApplication {
 		System.out.println(service.hello());
 		var repo = context.getBean(MyRepository.class);
 		System.out.println(repo.hello());
+
+		LazyLoader lazy = context.getBean(LazyLoader.class);
 	}
 
 }
