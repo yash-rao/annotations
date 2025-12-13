@@ -9,6 +9,8 @@ import com.AnnotationSpringBoot.annotation.spring.boot.Scope.Singleton;
 import com.AnnotationSpringBoot.annotation.spring.boot.Service.MyService;
 import com.AnnotationSpringBoot.annotation.spring.boot.Service.Pizza;
 import com.AnnotationSpringBoot.annotation.spring.boot.Service.VegPizza;
+import com.AnnotationSpringBoot.annotation.spring.boot.propertySource.PropertySourceDemo;
+import com.AnnotationSpringBoot.annotation.spring.boot.value.ValueAnnotation;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -32,21 +34,32 @@ public class AnnotationSpringBootApplication {
 //
 //		LazyLoader lazy = context.getBean(LazyLoader.class);
 
-		Singleton singleton = context.getBean(Singleton.class);
-		Singleton singleton1 = context.getBean(Singleton.class);
-		Singleton singleton2 = context.getBean(Singleton.class);
-		System.out.println(singleton.hashCode());
-		System.out.println(singleton1.hashCode());
-		System.out.println(singleton2.hashCode());
+//		Singleton singleton = context.getBean(Singleton.class);
+//		Singleton singleton1 = context.getBean(Singleton.class);
+//		Singleton singleton2 = context.getBean(Singleton.class);
+//		System.out.println(singleton.hashCode());
+//		System.out.println(singleton1.hashCode());
+//		System.out.println(singleton2.hashCode());
+//
+//		PrototypeBean prototypeBean = context.getBean(PrototypeBean.class);
+//		PrototypeBean prototypeBean1 = context.getBean(PrototypeBean.class);
+//		PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);
+//
+//		System.out.println(prototypeBean.hashCode());
+//		System.out.println(prototypeBean1.hashCode());
+//		System.out.println(prototypeBean2.hashCode());
+//
+//		ValueAnnotation value = context.getBean(ValueAnnotation.class);
+//		System.out.println(value.getDefaultName()+value.getHost());
+//		System.out.println(value.getJavaHome());
+//		System.out.println(value.getJavaHomeDirectory());
 
-		PrototypeBean prototypeBean = context.getBean(PrototypeBean.class);
-		PrototypeBean prototypeBean1 = context.getBean(PrototypeBean.class);
-		PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);
-
-		System.out.println(prototypeBean.hashCode());
-		System.out.println(prototypeBean1.hashCode());
-		System.out.println(prototypeBean2.hashCode());
-
+		PropertySourceDemo propertySourceDemo = context.getBean(PropertySourceDemo.class);
+		System.out.println(propertySourceDemo.getEmail());
+		System.out.println(propertySourceDemo.getHost());
+		System.out.println(propertySourceDemo.getPassword());
+		System.out.println(propertySourceDemo.getAppName());
+		System.out.println(propertySourceDemo.getAppDescription());
 	}
 
 }
