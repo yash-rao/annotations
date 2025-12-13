@@ -1,0 +1,58 @@
+Component
+Autowired
+Qualifier - To avoid confusion  between beans when two more class implements same interface.
+
+Primary - To give higher preference to bean when there are multiple beans of same type. It is also alternative to Qualifier
+
+Bean - Indicates that a method produces a bean to be managed by Spring Container. The bean annotation is usually configured in Configuration class to create Spring Bean definitions.
+ - By default bean name is same as method name. We can specify bean name using @Bean(name="beanName")
+ - @Bean annotation provides initMethod and destroyMethod attributes to perform certain actions before initialization and before destruction by a container.
+
+Stereotype annotations
+ - These annotations are used to spring beans automatically in application context(Spring IOC container).
+ - The main stereotype annotation is @Component.
+ - By using this annotation Spring provides more stereotype meta annotations such as @Service, @Repository and @Controller.
+ - @Service annotation is used to create Spring bean at the service layer
+ - @Repository is used Spring bean for repo at DAO layer
+ - @Controller is used to create spring bean at controller layer.
+
+
+@Lazy 
+ - Spring creates all singleton beans eagerly at the startup of application context
+ - You can load spring beans lazily on demand using @Lazy annotation.
+ - Lazy can be used with configuration, component and bean annotations.
+
+@Scope
+Latest version of Spring framework defines 6 types of scopes
+ - Singleton
+ - Prototype
+ - Request
+ - Session
+ - Application
+ - WebSocket
+
+Last four are available in web-aware application
+ - By default beans are singleton
+ - Scope annotation is used to define a scope of bean
+ - We use a scope to define the scope of component class or bean definition
+ - Singleton - Only one instance of bean is created and shared across the entire application.
+ - Prototype - new instance of bean is created every time it is requested
+ 
+@Value annotation
+ - Spring Value is used to assign default values to variables and method arguments
+ - Value annotation is mostly used to get value for specific property key from properties file.
+ - We can read spring environment variables as well as system variable using @Value annotation
+
+
+@PropertySource
+ - Used to provide properties file to Spring Environment
+@PropertySources 
+ - Used to provide multiple properties files to Spring Environment
+ - These annotation is used with @Configuration Classes
+ 
+
+@Controller 
+ - Spring provides controller annotation to make java class a spring MVC controller. Controller indicates that a particular class serves the role of controller
+ - controller in spring mvc web application is component that handles incoming http request.
+ - is simply specialization of component class which allows to auto detect implementation classes through the classpath scanning
+ - @Requestmapping
